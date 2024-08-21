@@ -2,11 +2,18 @@
     "users": [
       {
         "id": "user01",
-        "pass": "pass01"
+        "pass": "pass01",
+        "name": "name01"
       },
       {
         "id": "user02",
-        "pass": "pass02"
+        "pass": "pass02",
+        "name": "name02"
+      },
+      {
+        "id": "user03",
+        "pass": "pass03",
+        "name": "name03"
       }
     ]
   }

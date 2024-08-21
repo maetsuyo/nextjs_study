@@ -6,11 +6,12 @@ export async function postAction(formData:FormData) {
     const pass = formData.get("pass");
     const user = usersData.users.find(user => user.id === id && user.pass === pass);
 
-    console.log(id);
-    console.log(pass);
     if (user) {
         console.log("ログイン成功");
+        console.log("名前は", user.name, "です。");
+        return true;
     } else {
         console.log("ログイン失敗");
+        return false;
     }
 }
