@@ -10,7 +10,7 @@ export default function Home() {
     const result = await postAction(formData);
 
     if (result) {
-      alert("ログイン成功！");
+      alert("ログイン成功");
       window.location.reload();
     } else {
       alert("idまたはpasswordが間違っています。");
