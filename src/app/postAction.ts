@@ -1,4 +1,3 @@
-"use server";
 import usersData from "./data/users.json";
 
 export async function postAction(formData:FormData) {
