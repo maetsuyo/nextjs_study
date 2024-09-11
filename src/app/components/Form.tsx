@@ -1,19 +1,17 @@
 import { useRouter } from "next/navigation";
-import { postAction } from "../postAction";
+import { FormEvent, useState } from "react";
 
 const form = () => {
-    const router = useRouter()
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      const formData = new FormData(event.currentTarget);
-      const result = await postAction(formData);
-      if (result.success) {
-        router.push(`users/${result.id}/edit`);
-      } else {
-        alert("idまたはpasswordが間違っています。");
-      }
-    }
-    return (
+  const [id, setId] = useState("")
+  const [pass, setPass] = useState("")
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    console.log("送信成功");
+  }
+  return (
+    <>
+      <h1 className="text-center text-3xl font-bold pt-5 mb-3">LOGIN</h1>
         <form onSubmit={handleSubmit} className="text-center pb-10">
           <p>
             <input
@@ -33,10 +31,11 @@ const form = () => {
           </p>
           <button
             type="submit"
-            className="text-whitebg-blue-700 font-medium rounded-lg text-sm px-2 py-2 mt-3">LOGIN
+            className="text-white bg-blue-700 font-medium rounded-lg text-sm px-2 py-2 mt-3">LOGIN
           </button>
         </form>
-    );
+    </>
+  );
 }
 
 export default form;
