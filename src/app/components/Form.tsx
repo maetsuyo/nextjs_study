@@ -1,4 +1,4 @@
-import { FormEvent, use, useState } from "react";
+import { FormEvent, useState } from "react";
 
 const form = () => {
   const [id, setId] = useState("")
@@ -7,7 +7,6 @@ const form = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("送信成功");
 
     try {
       const res = await fetch("http://localhost:3001/users");
