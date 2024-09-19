@@ -1,9 +1,9 @@
 import { FormEvent, useState } from "react";
 
 const form = () => {
-  const [id, setId] = useState("")
-  const [pass, setPass] = useState("")
-  const [userInfo, SetUserInfo] = useState<{id: string, pass: string, name: string} | null>(null);
+  const [id, setId] = useState<string>("")
+  const [pass, setPass] = useState<string>("")
+  const [userInfo, setUserInfo] = useState<{id: string, pass: string, name: string} | null>(null);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -14,10 +14,10 @@ const form = () => {
       const users = await res.json();
       const confirm = users.find((user : {id: string, pass: string}) => user.id === id && user.pass === pass);
       if (confirm) {
-        SetUserInfo({id: confirm.id, pass: confirm.pass, name: confirm.name});
+        setUserInfo({id: confirm.id, pass: confirm.pass, name: confirm.name});
       } else {
         console.log("取得失敗");
-        SetUserInfo(null);
+        setUserInfo(null);
       }
     } catch (error) {
       console.error("エラー", error);
