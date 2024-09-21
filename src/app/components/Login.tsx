@@ -1,6 +1,8 @@
 import { FormEvent, useState } from "react";
+import LoginForm from "./Login_Form";
+import UserInfo from "./UserInfo";
 
-const form = () => {
+const Login = () => {
   const [id, setId] = useState<string>("")
   const [pass, setPass] = useState<string>("")
   const [userInfo, setUserInfo] = useState<{id: string, pass: string, name: string} | null>(null);
@@ -32,26 +34,13 @@ const form = () => {
           pass={pass}
           onChangeId={(e) => setId(e.target.value)}
           onChangePass={(e) => setPass(e.target.value)}
-          onSubmit={handleSubmit}
+          onSubmitForm={handleSubmit}
         />
       </div>
 
-      {userInfo && (
-        <div className="mt-5 p-5 bg-green-100 border border-green-500 text-green-800 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-3">ログイン成功</h2>
-            <p className="text-lg">
-              <span className="font-bold">ID:</span> {userInfo.id}
-            </p>
-            <p className="text-lg">
-              <span className="font-bold">PASS:</span> {userInfo.pass}
-            </p>
-            <p className="text-lg">
-              <span className="font-bold">NAME:</span> {userInfo.name}
-            </p>
-        </div>
-      )}
+      {userInfo && <UserInfo id={userInfo.id} pass={userInfo.pass} name={userInfo.name} />}
     </>
   );
 }
 
-export default form;
+export default Login;

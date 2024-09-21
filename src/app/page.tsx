@@ -1,13 +1,13 @@
 "use client";
 
-import Form from "./components/Login"
+import Login from "./components/Login";
 import LinkList from "./components/LinkList";
 
 export default function Home() {
   return (
     <>
       <div>
-        <Form/>
+        <Login/>
       </div>
       <div>
         <LinkList/>

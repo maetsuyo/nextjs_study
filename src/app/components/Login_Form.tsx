@@ -5,12 +5,12 @@ interface LoginFormProps {
     pass: string;
     onChangeId: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onChangePass: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onSubmit: (e: FormEvent) => void;
+    onSubmitForm: (e: FormEvent) => void;
 }
 
-const LoginForm = ({id, pass, onChangeId, onChangePass, OnSubmit}: LoginFormProps) => {
+const LoginForm = ({id, pass, onChangeId, onChangePass, onSubmitForm}: LoginFormProps) => {
   return (
-    <form onSubmit={OnSubmit} className="text-center pb-10">
+    <form onSubmit={onSubmitForm} className="text-center pb-10">
       <p>
         <input
           type="text"
@@ -38,3 +38,5 @@ const LoginForm = ({id, pass, onChangeId, onChangePass, OnSubmit}: LoginFormProp
     </form>
   );
 };
+
+export default LoginForm
