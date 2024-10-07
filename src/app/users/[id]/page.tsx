@@ -10,7 +10,7 @@ export default function UserPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3001/users");
+        const res = await fetch("http://localhost:3021/users");
         const users = await res.json();
         const confirm = users.find((user : {id: string}) => user.id === `user${id}`);
         if (confirm) {

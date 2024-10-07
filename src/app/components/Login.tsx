@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3001/users");
+      const res = await fetch("http://localhost:3021/users");
       console.log(res);
       const users = await res.json();
       const confirm = users.find((user : {id: string, pass: string}) => user.id === id && user.pass === pass);
